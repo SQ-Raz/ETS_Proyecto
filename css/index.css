@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* cambio el color del fondo */
+
+body {
+    background: linear-gradient(to right, rgb(49, 28, 78), rgb(19, 38, 101));
+    font-family: 'Silkscreen', sans-serif;
+}
+
+/* establesco el tamaño del nav y un position fixed */
+nav {
+    height: 150px;
+    width: 100%;
+    position: fixed;
+}
+
+/* modifique el tamaño de la imagen para que se vea mejor a demas de poner bordes criculares */
+.enlace img {
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+}
+
+/* esto controla indirectamente la imagen y su padding */
+
+.enlace {
+    position: absolute;
+    padding: 30px 20px 50px 50px;
+}
+
+/* coloco los links del nav en la parte derecha */
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+/* le otrogo un display:inline-block para que se pongan uno del lado del otro */
+
+nav ul li {
+    display: inline-block;
+    line-height: 150px;
+    margin: 0 5px;
+}
+
+/* modifico el color de las letras del nav, su tamaño, su color y background, tipo de letra, y que tenga los bordes circulares */
+
+nav ul li a {
+    color: #fff;
+    font-size: 16px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    background-color: rgba(60, 125, 143, 255);
+    border-radius: 25px;
+}
+
+li a:hover {
+    background: none;
+}
+
+/* le otorgo un color al label, un tamaño, lo centro en el nav, y lo oculto con un display:none ya que solo quiero que se muestre cuando este en modo telefono */
+.check-label {
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: none;
+}
+
+/* oculto el check ya que su unica funcion es en telefonos y no tiene que mostrarse ya que no es necesario visualmente */
+#check {
+    display: none;
+}
+
+/* solo hago que se mueva la imagen mas a la izquierda y que las letras se hagan mas pequeñas si el width baja a 952 esto pensado para las tabletas */
+
+@media (max-width: 952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+}
+
+/* Lo que hago en esta parte puede llegar a ser un poco más complejo, ya que juego con la posición del "ul" y así hacer ver como que no está en la página, y que solo presionando el check que está asociado a la imagen del menú con un label, aparezca de nuevo. */
+
+@media (max-width: 858px) {
+    .check-label {
+        display: block;
+        cursor: pointer;
+        /* Cambia el cursor al pasar sobre el botón */
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgb(20, 71, 87);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    li a:hover {
+        background: none;
+        color: rgb(241, 251, 255);
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .enlace img {
+        width: 100px;
+        height: auto;
+        border-radius: 30px;
+    }
+
+    .enlace {
+        position: absolute;
+        padding: 10px 10px 10px 10px;
+    }
+}
+
+/*fin del CSS del navegador */
+/* 
+
+
+
+
+
+
+
+
+
+comiezo del index.html 
+
+
+
+
+
+
+
+
+
+*/
+
